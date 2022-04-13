@@ -11,6 +11,7 @@ $arrayOfBangers[] = new Banger(2, "Pling");
 $arrayOfBangers[] = new Banger(4, "Plong");
  */
 
+DivisorCheck::validateDivisorCheck($numberStart, $numberEnd);
 $divisorChecker = new DivisorCheck($numberStart, $numberEnd, $arrayOfBangers);
 
 
@@ -28,6 +29,12 @@ class DivisorCheck
         $this->startingNumber = $startingNumber;
         $this->endingNumber = $endingNumber;
         $this->arrayOfBangers = $arrayOfBangers;
+
+        // if time > noon
+        // array = {fizz,3}, {buzz,5}
+        // else
+        // array = {plip,2 {plop,4}
+
     }
 
     public function outputDivisorTests()
@@ -48,7 +55,7 @@ class DivisorCheck
         }
     }
 
-    public function checkDivisors($numberToCheck) : String
+    private function checkDivisors($numberToCheck) : String
     {
         $termOut = "";
         foreach($this->arrayOfBangers AS $banger)
@@ -59,6 +66,12 @@ class DivisorCheck
             }
         }
         return $termOut;
+    }
+
+    public static function validateDivisorCheck($numberStart, $numberEnd)
+    {
+        // add validation
+        throw new InvalidArgumentException();
     }
 }
 
