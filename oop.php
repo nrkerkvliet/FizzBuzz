@@ -75,41 +75,5 @@ class Banger
 
 }
 
-
-
-
-
-/* echo "<h1>Test</h1>";
-
-$numberIn=0;
-$endNumber=100;
-
-for ($numberIn = 0; $numberIn <= $endNumber; $numberIn++)
-{
-    $outputString = "";
-    $outputString .= checkMultiple(3, $numberIn, 'Fizz');
-    $outputString .= checkMultiple(5, $numberIn, 'Buzz');
-    if($outputString == "")
-    {
-        echo $numberIn;
-    }
-    else
-    {
-        echo $outputString;
-    }
-    echo "<br>";
-}
-
-
-function checkMultiple($divisor, $numberToCheck, $termOut) : String
-{
-    if($numberToCheck % $divisor == 0)
-    {
-        return $termOut;
-    }
-    return "";
-} */
-
-
 ?>
 
