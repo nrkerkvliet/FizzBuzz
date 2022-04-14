@@ -3,38 +3,26 @@
 $numberStart = 1; // must be > 0  &&   <= 100    && must be < $numberEnd
 $numberEnd = 100; // must be > 0  &&   <= 100    && must be > $numberSTart
 
-$arrayOfBangers = array();
-$arrayOfBangers[] = new Banger(3, "Fizz");
-$arrayOfBangers[] = new Banger(5, "Buzz");
-/* 
-$arrayOfBangers[] = new Banger(2, "Pling");
-$arrayOfBangers[] = new Banger(4, "Plong");
- */
+$matchDict = array();
+$matchDict[3] = 'fizz';
+$matchDict[5] = 'buzz';
 
-DivisorCheck::validateDivisorCheck($numberStart, $numberEnd);
-$divisorChecker = new DivisorCheck($numberStart, $numberEnd, $arrayOfBangers);
-
+//DivisorCheck::validateDivisorCheck($numberStart, $numberEnd);
+$divisorChecker = new DivisorCheck($numberStart, $numberEnd, $matchDict);
 
 $divisorChecker->outputDivisorTests();
-
 
 class DivisorCheck
 {
     public $startingNumber;
     public $endingNumber;
-    public $arrayOfBangers;
+    public $matchDict;
 
-    function __construct($startingNumber, $endingNumber, $arrayOfBangers)
+    function __construct($startingNumber, $endingNumber, $matchDict)
     {
         $this->startingNumber = $startingNumber;
         $this->endingNumber = $endingNumber;
-        $this->arrayOfBangers = $arrayOfBangers;
-
-        // if time > noon
-        // array = {fizz,3}, {buzz,5}
-        // else
-        // array = {plip,2 {plop,4}
-
+        $this->matchDict = $matchDict;
     }
 
     public function outputDivisorTests()
@@ -58,11 +46,11 @@ class DivisorCheck
     private function checkDivisors($numberToCheck) : String
     {
         $termOut = "";
-        foreach($this->arrayOfBangers AS $banger)
+        foreach($this->matchDict AS $divisor => $term)
         {
-            if($numberToCheck % $banger->divisor == 0)
+            if($numberToCheck % $divisor == 0)
             {
-                $termOut .= $banger->stringOutput;
+                $termOut .= $term;
             }
         }
         return $termOut;
@@ -74,19 +62,5 @@ class DivisorCheck
         throw new InvalidArgumentException();
     }
 }
-
-class Banger
-{
-    public $divisor; // 3
-    public $stringOutput; // fizz
-
-    function __construct($divisor, $stringOutput)
-    {
-        $this->divisor = $divisor;
-        $this->stringOutput = $stringOutput;
-    }
-
-}
-
 ?>
 
