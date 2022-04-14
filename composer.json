@@ -1,0 +1,17 @@
+{
+    "name": "natek/test",
+    "autoload": {
+        "psr-4": {
+            "Natek\\Test\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "NateK",
+            "email": "you@example.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^9.5"
+    }
+}
