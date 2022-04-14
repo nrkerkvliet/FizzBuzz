@@ -1,6 +1,9 @@
 <?php
 
-$numberStart = 1; // must be > 0  &&   <= 100    && must be < $numberEnd
+/* echo $_SERVER["DOCUMENT_ROOT"];
+die; */
+
+/* $numberStart = 1; // must be > 0  &&   <= 100    && must be < $numberEnd
 $numberEnd = 100; // must be > 0  &&   <= 100    && must be > $numberSTart
 
 $matchDict = array();
@@ -10,7 +13,7 @@ $matchDict[5] = 'buzz';
 //DivisorCheck::validateDivisorCheck($numberStart, $numberEnd);
 $divisorChecker = new DivisorCheck($numberStart, $numberEnd, $matchDict);
 
-$divisorChecker->outputDivisorTests();
+$divisorChecker->outputDivisorTests(); */
 
 class DivisorCheck
 {
@@ -36,7 +39,7 @@ class DivisorCheck
         }
     }
 
-    private function checkDivisors($numberToCheck) : String
+    public function checkDivisors($numberToCheck) : String
     {
         $termOut = "";
         foreach($this->matchDict AS $divisor => $term)
