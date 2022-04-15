@@ -2,7 +2,7 @@
     "name": "natek/test",
     "autoload": {
         "psr-4": {
-            "Natek\\Test\\": "src/"
+            "App\\": "src"
         }
     },
     "authors": [

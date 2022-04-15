@@ -1,5 +1,6 @@
 <?php
 
+namespace App;
 /* echo $_SERVER["DOCUMENT_ROOT"];
 die; */
 
