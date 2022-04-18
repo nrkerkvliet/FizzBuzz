@@ -60,6 +60,20 @@ class FizzBuzzTest extends \PHPUnit\Framework\TestCase
 
         $this->assertEquals('BingBangPow', $result);
     }
+
+    public function testMinimum()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $divisorChecker = new DivisorCheck(-1, 100, [3=>'fizz', 5=>'buzz']);
+    }
+
+    public function testMaximum()
+    {
+        $this->expectException(InvalidArgumentException::class);
+
+        $divisorChecker = new DivisorCheck(1, 101, [3=>'fizz', 5=>'buzz']);
+    }
 }
 
 ?>

@@ -7,9 +7,12 @@ class DivisorCheck
     public $startingNumber;
     public $endingNumber;
     public $matchDict;
+    public $minLimit = 1;
+    public $maxLimit = 100;
 
     function __construct($startingNumber, $endingNumber, $matchDict)
     {
+        $this->validateDivisorCheck($startingNumber, $endingNumber);
         $this->startingNumber = $startingNumber;
         $this->endingNumber = $endingNumber;
         $this->matchDict = $matchDict;
@@ -45,10 +48,16 @@ class DivisorCheck
         return $termOut;
     }
 
-    public static function validateDivisorCheck($numberStart, $numberEnd)
+    private function validateDivisorCheck($numberStart, $numberEnd)
     {
-        // add validation
-        throw new InvalidArgumentException();
+        if($numberStart < $this->minLimit)
+        {
+            throw new \InvalidArgumentException('Minimum limit is ' . $this->minLimit);
+        }
+        if($numberEnd > $this->maxLimit)
+        {
+            throw new \InvalidArgumentException('Maximum limit is ' . $this->maxLimit);
+        }
     }
 }
 ?>
