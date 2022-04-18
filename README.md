@@ -2,7 +2,7 @@
 My take on the fizz buzz algorithm
 
 
-oop.php contains classes for executing the FizzBuzz algorithm (see below) using an object oriented pattern.
+The classes directory contains classes for executing the FizzBuzz algorithm (see below) using an object oriented pattern.
 
 Your goal is to write an application that uses the FizzBuzz algorithm. The application will take a starting number and an ending number, both specified as `0 < number <= 100`.
 
